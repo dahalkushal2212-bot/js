@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+    <h1 id="text">We are learning JavaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<Script>
+    document.querySelector("#start").addEventListener("click", function () {
+        changeText = setInterval(function () {
+            const text = document.getElementById('text')
+            text.innerHTML = text.innerHTML === "We are learning javascript" 
+            ? "We are learning python" 
+            : "We are learning Javascript"
+
+            console.log("Running Repeatedly:", new Date().toLocaleTimeString())
+        },1000)
+
+
+        console.log("start", Date.now())
+    });
+
+
+    document.querySelector("#stop").addEventListener("click", function () {
+        clearInterval(changeText);
+        console.log("Stopped")
+    })
+
+
+</Script>
+
+</html>

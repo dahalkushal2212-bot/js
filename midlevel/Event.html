@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+    <h1 id="text">Change the background color</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<Script>
+    let changebgColor;
+    <!-- let colors = ["red", "blue", "green", "gray"];
+    let index = 0; -->
+    
+    document.querySelector("#start").addEventListener("click", function () {
+        changebgColor = setInterval(function () {
+            
+            document.body.style.backgroundColor = colors[index];
+
+            index = (index + 1) % colors.length; // loop colors
+            console.log("Running Repeatedly:", new Date().toLocaleTimeString())
+        }, 1000)
+
+
+        console.log("start", Date.now())
+    });
+
+
+    document.querySelector("#stop").addEventListener("click", function () {
+        clearInterval(changebgColor);
+        console.log("Stopped")
+    })
+
+
+</Script>
+
+</html>
